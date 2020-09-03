@@ -1,5 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
+import { format } from 'date-fns';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -7,6 +9,9 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      imports: [
+        HttpClientModule,
+      ]
     }).compileComponents();
   }));
 
@@ -16,16 +21,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'stock-simulator'`, () => {
+  it(`should have as title 'Stock Simulator'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('stock-simulator');
+    expect(app.title).toEqual('Stock Simulator');
   });
 
-  it('should render title', () => {
+  it('should render day 1', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('stock-simulator app is running!');
+    expect(compiled.querySelector('#current-day').textContent).toContain(`Day 1 | ${format(new Date(), 'EEEE, MMMM d, yyyy')}`);
   });
 });

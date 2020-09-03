@@ -30,6 +30,7 @@ export type ChangeTuple = [ boolean, string, string ];
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  public title = 'Stock Simulator';
   public isLoading = false;
   public displayedColumns = ['name', 'initial', 'current', 'change'];
   public startDate: Date;

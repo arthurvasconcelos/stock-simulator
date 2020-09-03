@@ -1,11 +1,11 @@
 <mat-toolbar>
   <mat-toolbar-row>
     <mat-icon>trending_up</mat-icon>&nbsp;
-    <span>Stock Simulator</span>
+    <span id="app-title">{{ title }}</span>
   </mat-toolbar-row>
 
   <mat-toolbar-row>
-    <span>Day {{ getDayDistance() }} | {{ getFormattedCurrentDate() }}</span>
+    <span id="current-day">Day {{ getDayDistance() }} | {{ getFormattedCurrentDate() }}</span>
     <span class="toolbar-spacer"></span>
     <button mat-icon-button matTooltip="Advance one day" (click)="goToNextDay()">
       <mat-icon>chevron_right</mat-icon>
